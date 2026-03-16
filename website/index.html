@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria Valeria & Juan David | 21 · 11 · 2026</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- FAVICON: reemplaza assets/img/logo.png con tu archivo de logo -->
+  <link rel="icon" type="image/png" href="assets/img/logo.ico" />
+  <link rel="apple-touch-icon" href="assets/img/logo.ico" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header" id="site-header">
+    <nav class="nav" aria-label="Navegación principal">
+      <ul class="nav__list nav__list--left">
+        <li><a href="#boda"       class="nav__link">Boda</a></li>
+        <li><a href="#vestimenta" class="nav__link">Vestimenta</a></li>
+        <li><a href="#hospedaje"  class="nav__link">Hospedaje</a></li>
+      </ul>
+      <!-- LOGO: reemplaza assets/img/logo.png con tu archivo -->
+      <a href="#hero" class="nav__logo" aria-label="Inicio">
+        <img src="assets/img/logo.png" alt="Maria Valeria & Juan David" class="nav__logo-img" />
+      </a>
+      <ul class="nav__list nav__list--right">
+        <li><a href="#belleza"  class="nav__link">Belleza</a></li>
+        <li><a href="#explora"  class="nav__link">Explora</a></li>
+        <li><a href="#regalos"  class="nav__link">Regalos</a></li>
+      </ul>
+      <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false" id="burger">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="nav__drawer" id="nav-drawer" aria-hidden="true">
+      <ul class="nav__drawer-list">
+        <li><a href="#boda"       class="nav__drawer-link">Boda</a></li>
+        <li><a href="#vestimenta" class="nav__drawer-link">Vestimenta</a></li>
+        <li><a href="#hospedaje"  class="nav__drawer-link">Hospedaje</a></li>
+        <li><a href="#belleza"    class="nav__drawer-link">Belleza</a></li>
+        <li><a href="#explora"    class="nav__drawer-link">Explora</a></li>
+        <li><a href="#regalos"    class="nav__drawer-link">Regalos</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+         FOTO: en styles.css busca .hero__bg y agrega:
+         background-image: url('img/hero.jpg');
+    ============================================================ -->
+    <section class="hero" id="hero" aria-label="Portada">
+      <div class="hero__bg" role="img" aria-label="Fotografía de Maria Valeria y Juan David"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        
+        <h1 class="hero__names">MARÍA VALERIA & JUAN DAVID</h1>
+        <div class="hero__cta-group">
+          <a href="#boda" class="btn btn--outline-cream">Ver detalles</a>
+        </div>
+
+        <!-- COUNTDOWN -->
+        <div class="hero__countdown" id="countdown" aria-live="polite">
+          <div class="hero__cd-unit">
+            <span class="hero__cd-num" id="cd-days">000</span>
+            <span class="hero__cd-label">días</span>
+          </div>
+          <span class="hero__cd-sep">:</span>
+          <div class="hero__cd-unit">
+            <span class="hero__cd-num" id="cd-hours">00</span>
+            <span class="hero__cd-label">horas</span>
+          </div>
+          <span class="hero__cd-sep">:</span>
+          <div class="hero__cd-unit">
+            <span class="hero__cd-num" id="cd-mins">00</span>
+            <span class="hero__cd-label">minutos</span>
+          </div>
+          <span class="hero__cd-sep">:</span>
+          <div class="hero__cd-unit">
+            <span class="hero__cd-num" id="cd-secs">00</span>
+            <span class="hero__cd-label">segundos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BODA — timeline vertical sobre fondo oscuro con foto
+         FOTO FONDO: en styles.css busca .boda__bg y agrega:
+         background-image: url('img/boda-bg.jpg');
+    ============================================================ -->
+    <section class="boda" id="boda" aria-label="Detalles de la boda">
+      <div class="boda__bg" role="img" aria-label="Fondo decorativo boda"></div>
+      <div class="boda__overlay"></div>
+      <div class="boda__inner container">
+        <p class="boda__intro reveal">
+          Esperamos con mucha ilusión celebrar este día tan especial junto a ustedes.
+        </p>
+        <div class="boda__timeline">
+
+          <div class="boda__row">
+            <div class="boda__cell boda__cell--left reveal-left">
+              <div class="boda__info">
+                <span class="boda__info-label">Fecha</span>
+                <span class="boda__info-value">Sábado 21 de<br>Noviembre, 2026</span>
+              </div>
+            </div>
+            <div class="boda__line-col"><div class="boda__line-seg"></div><div class="boda__dot"></div><div class="boda__line-seg"></div></div>
+            <div class="boda__cell boda__cell--right"></div>
+          </div>
+
+          <div class="boda__row">
+            <div class="boda__cell boda__cell--left"></div>
+            <div class="boda__line-col"><div class="boda__line-seg"></div><div class="boda__dot"></div><div class="boda__line-seg"></div></div>
+            <div class="boda__cell boda__cell--right reveal-right">
+              <div class="boda__info">
+                <span class="boda__info-label">Hora Ceremonia</span>
+                <span class="boda__info-value">4:00 p.m.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="boda__row">
+            <div class="boda__cell boda__cell--left reveal-left">
+              <div class="boda__info">
+                <span class="boda__info-label">Hora Recepción</span>
+                <span class="boda__info-value">6:30 p.m.</span>
+              </div>
+            </div>
+            <div class="boda__line-col"><div class="boda__line-seg"></div><div class="boda__dot"></div><div class="boda__line-seg"></div></div>
+            <div class="boda__cell boda__cell--right"></div>
+          </div>
+
+          <div class="boda__row">
+            <div class="boda__cell boda__cell--left"></div>
+            <div class="boda__line-col"><div class="boda__line-seg"></div><div class="boda__dot"></div><div class="boda__line-seg"></div></div>
+            <div class="boda__cell boda__cell--right reveal-right">
+              <div class="boda__info">
+                <span class="boda__info-label">Lugar</span>
+                <span class="boda__info-value">Hotel El Prado</span>
+                <a href="#mapa" class="boda__info-link">Ver en mapa ↓</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="mapa" id="mapa" aria-label="Ubicación">
+      <div class="mapa__inner reveal">
+        <iframe
+          title="Hotel El Prado, Barranquilla"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3391.2664444041848!2d-74.8027270257095!3d10.998775855054577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d75bbde0021%3A0x8714942d90d292b2!2sHotel%20el%20Prado!5e1!3m2!1sen!2sco!4v1773617080024!5m2!1sen!2sco"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VESTIMENTA — carruseles de fotos
+         Agrega más slides copiando .vest-slide dentro de cada .vest-track
+    ============================================================ -->
+    <section class="vestimenta" id="vestimenta" aria-label="Código de vestimenta">
+      <div class="container">
+        <h2 class="section-title reveal">Vestimenta</h2>
+      </div>
+
+      <!-- MUJERES: carrusel izq, texto der -->
+      <div class="vestimenta__block vestimenta__block--women reveal">
+        <div class="vestimenta__carousel" aria-label="Fotos vestimenta mujeres">
+          <div class="vest-track" id="vest-track-women">
+            <div class="vest-slide vestimenta__photo--women" role="img" aria-label="Vestido de mujer 1"></div>
+            <div class="vest-slide vestimenta__photo--women2" role="img" aria-label="Vestido de mujer 2"></div>
+            <div class="vest-slide vestimenta__photo--women3" role="img" aria-label="Vestido de mujer 3"></div>
+          </div>
+          <button class="vest-btn vest-btn--prev" aria-label="Foto anterior" data-track="vest-track-women">&#8592;</button>
+          <button class="vest-btn vest-btn--next" aria-label="Foto siguiente" data-track="vest-track-women">&#8594;</button>
+          <div class="vest-dots" id="vest-dots-women"></div>
+        </div>
+        <div class="vestimenta__body">
+          <h3 class="vestimenta__heading">Mujeres</h3>
+          <p class="vestimenta__desc">Vestidos largos unicolor</p>
+          <a href="https://www.pinterest.com/search/pins/?q=vestidos+largos+unicolor+boda"
+             target="_blank" rel="noopener noreferrer" class="btn btn--dark-outline">Ver en Pinterest</a>
+        </div>
+      </div>
+
+      <!-- HOMBRES: texto izq, carrusel der -->
+      <div class="vestimenta__block vestimenta__block--men reveal">
+        <div class="vestimenta__body vestimenta__body--text-left">
+          <h3 class="vestimenta__heading">Hombres</h3>
+          <ul class="vestimenta__rules">
+            <li>Smoking Negro</li>
+            <li>Solo se permite traje color negro</li>
+            <li>No se permiten estampados</li>
+            <li>Solo se permiten zapatos negros</li>
+            <li>No se debe usar corbata, únicamente corbatín</li>
+          </ul>
+          <a href="https://www.pinterest.com/search/pins/?q=smoking+negro+boda+hombre"
+             target="_blank" rel="noopener noreferrer" class="btn btn--dark-outline">Ver en Pinterest</a>
+        </div>
+        <div class="vestimenta__carousel" aria-label="Fotos vestimenta hombres">
+          <div class="vest-track" id="vest-track-men">
+            <div class="vest-slide vestimenta__photo--men" role="img" aria-label="Smoking hombre 1"></div>
+            <div class="vest-slide vestimenta__photo--men2" role="img" aria-label="Smoking hombre 2"></div>
+            <div class="vest-slide vestimenta__photo--men3" role="img" aria-label="Smoking hombre 3"></div>
+          </div>
+          <button class="vest-btn vest-btn--prev" aria-label="Foto anterior" data-track="vest-track-men">&#8592;</button>
+          <button class="vest-btn vest-btn--next" aria-label="Foto siguiente" data-track="vest-track-men">&#8594;</button>
+          <div class="vest-dots" id="vest-dots-men"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HOSPEDAJE
+         FOTO: .hospedaje__card-img--1 → background-image: url('img/holiday-inn.jpg')
+    ============================================================ -->
+    <section class="hospedaje" id="hospedaje" aria-label="Hospedaje recomendado">
+      <div class="container">
+        <h2 class="section-title reveal">Hospedaje</h2>
+        <p class="section-subtitle reveal">Para que disfrutes al máximo tu visita, te dejamos algunas recomendaciones de hospedaje.</p>
+      </div>
+      <div class="hospedaje__wrap">
+        <div class="hospedaje__track" id="hospedaje-track">
+
+          <article class="hospedaje__card">
+            <div class="hospedaje__card-img hospedaje__card-img--1" role="img" aria-label="Holiday Inn Express Barranquilla"></div>
+            <div class="hospedaje__card-body">
+              <h3 class="hospedaje__card-name">Holiday Inn Express</h3>
+              <p class="hospedaje__card-desc">A pocos minutos de los principales centros comerciales.</p>
+              <a href="https://www.ihg.com/holidayinnexpress/hotels/co/es/barranquilla"
+                 target="_blank" rel="noopener noreferrer" class="btn btn--dark-outline">Más información</a>
+            </div>
+          </article>
+
+          <article class="hospedaje__card">
+            <div class="hospedaje__card-img hospedaje__card-img--2" role="img" aria-label="Hotel El Prado Barranquilla"></div>
+            <div class="hospedaje__card-body">
+              <h3 class="hospedaje__card-name">Hotel El Prado</h3>
+              <p class="hospedaje__card-desc">Icónico hotel histórico en el corazón de Barranquilla.</p>
+              <a href="https://www.hotelelprado.com"
+                 target="_blank" rel="noopener noreferrer" class="btn btn--dark-outline">Más información</a>
+            </div>
+          </article>
+
+          <article class="hospedaje__card">
+            <div class="hospedaje__card-img hospedaje__card-img--1" role="img" aria-label="Holiday Inn Express Barranquilla"></div>
+            <div class="hospedaje__card-body">
+              <h3 class="hospedaje__card-name">Holiday Inn Express</h3>
+              <p class="hospedaje__card-desc">A pocos minutos de los principales centros comerciales.</p>
+              <a href="https://www.ihg.com/holidayinnexpress/hotels/co/es/barranquilla"
+                 target="_blank" rel="noopener noreferrer" class="btn btn--dark-outline">Más información</a>
+            </div>
+          </article>
+
+          <article class="hospedaje__card">
+            <div class="hospedaje__card-img hospedaje__card-img--2" role="img" aria-label="Hotel El Prado Barranquilla"></div>
+            <div class="hospedaje__card-body">
+              <h3 class="hospedaje__card-name">Hotel El Prado</h3>
+              <p class="hospedaje__card-desc">Icónico hotel histórico en el corazón de Barranquilla.</p>
+              <a href="https://www.hotelelprado.com"
+                 target="_blank" rel="noopener noreferrer" class="btn btn--dark-outline">Más información</a>
+            </div>
+          </article>
+          <article class="hospedaje__card">
+            <div class="hospedaje__card-img hospedaje__card-img--1" role="img" aria-label="Holiday Inn Express Barranquilla"></div>
+            <div class="hospedaje__card-body">
+              <h3 class="hospedaje__card-name">Holiday Inn Express</h3>
+              <p class="hospedaje__card-desc">A pocos minutos de los principales centros comerciales.</p>
+              <a href="https://www.ihg.com/holidayinnexpress/hotels/co/es/barranquilla"
+                 target="_blank" rel="noopener noreferrer" class="btn btn--dark-outline">Más información</a>
+            </div>
+          </article>
+
+          <article class="hospedaje__card">
+            <div class="hospedaje__card-img hospedaje__card-img--2" role="img" aria-label="Hotel El Prado Barranquilla"></div>
+            <div class="hospedaje__card-body">
+              <h3 class="hospedaje__card-name">Hotel El Prado</h3>
+              <p class="hospedaje__card-desc">Icónico hotel histórico en el corazón de Barranquilla.</p>
+              <a href="https://www.hotelelprado.com"
+                 target="_blank" rel="noopener noreferrer" class="btn btn--dark-outline">Más información</a>
+            </div>
+          </article>
+
+        </div>
+        <button class="hospedaje__arrow hospedaje__arrow--prev" id="sliderPrev" aria-label="Anterior">&#8592;</button>
+        <button class="hospedaje__arrow hospedaje__arrow--next" id="sliderNext" aria-label="Siguiente">&#8594;</button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BELLEZA — foto centrada, MAQUILLADORAS arriba-der, PEINADORAS abajo-izq
+         FOTO: .belleza__center-photo → background-image: url('assets/img/belleza.jpg')
+    ============================================================ -->
+    <section class="belleza" id="belleza" aria-label="Recomendaciones de belleza">
+      <div class="container">
+        <p class="belleza__intro reveal">Si deseas maquillarte o peinarte para la celebración, aquí te dejamos algunas recomendaciones.</p>
+      </div>
+
+      <div class="belleza__layout reveal">
+
+        <!-- MAQUILLADORAS — arriba derecha -->
+        <div class="belleza__group belleza__group--makeup">
+          <h3 class="belleza__heading">Maquilladoras</h3>
+          <ul class="belleza__handles">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="belleza__handle">@maquillador</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="belleza__handle">@maquillador</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="belleza__handle">@maquillador</a></li>
+          </ul>
+        </div>
+
+        <!-- FOTO CENTRAL -->
+        <div class="belleza__center-photo" role="img" aria-label="Fotografía de belleza para la boda">
+          <!-- FOTO: background-image: url('assets/img/belleza.jpg') -->
+        </div>
+
+        <!-- PEINADORAS — abajo izquierda -->
+        <div class="belleza__group belleza__group--hair">
+          <h3 class="belleza__heading">Peinadoras</h3>
+          <ul class="belleza__handles">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="belleza__handle">@peinador</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="belleza__handle">@peinador</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="belleza__handle">@peinador</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXPLORA — carrusel de lugares
+         Agrega más .explora__card copiando el bloque article
+         FOTOS: agrega background-image en .explora__img--N en styles.css
+    ============================================================ -->
+    <section class="explora" id="explora" aria-label="Explora Barranquilla">
+      <div class="container">
+        <h2 class="section-title reveal">Explora</h2>
+        <p class="section-subtitle reveal">
+          Compartimos algunos lugares que recomendamos visitar durante tu estadía en Barranquilla, así como algunos sitios para disfrutar de su gastronomía.
+        </p>
+      </div>
+
+      <div class="explora__slider-wrap">
+        <div class="explora__track-clip">
+          <div class="explora__track" id="explora-track">
+
+          <article class="explora__card">
+            <div class="explora__img explora__img--1" role="img" aria-label="Ventana al Mundo, Barranquilla"></div>
+            <div class="explora__overlay">
+              <span class="explora__badge">Turístico</span>
+              <h3 class="explora__place">Malecón del Río</h3>
+              <a href="https://maps.app.goo.gl/TcPzk1qs8bVt75jD7" target="_blank" rel="noopener noreferrer"
+                 class="btn btn--cream">Más información</a>
+            </div>
+          </article>
+
+          <article class="explora__card">
+            <div class="explora__img explora__img--2" role="img" aria-label="Museo del Caribe, Barranquilla"></div>
+            <div class="explora__overlay">
+              <span class="explora__badge">Gastronomía</span>
+              <h3 class="explora__place">Varadero</h3>
+              <a href="https://www.instagram.com/varaderorestaurante" target="_blank" rel="noopener noreferrer"
+                 class="btn btn--cream">Más información</a>
+            </div>
+          </article>
+
+          <article class="explora__card">
+            <div class="explora__img explora__img--3" role="img" aria-label="Malecón del Río, Barranquilla"></div>
+            <div class="explora__overlay">
+              <span class="explora__badge">Turístico</span>
+              <h3 class="explora__place">Ventana al Mundo</h3>
+              <a href="https://maps.app.goo.gl/tJYyfndy65acEbMN7" target="_blank" rel="noopener noreferrer"
+                 class="btn btn--cream">Más información</a>
+            </div>
+          </article>
+
+        </div><!-- /.explora__track -->
+          <div class="explora__dots" id="explora-dots"></div>
+          <button class="explora__arrow explora__arrow--prev" id="exploraPrev" aria-label="Anterior">&#8592;</button>
+          <button class="explora__arrow explora__arrow--next" id="exploraNext" aria-label="Siguiente">&#8594;</button>
+        </div><!-- /.explora__track-clip -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         REGALOS
+         FOTO FONDO: .regalos__bg → background-image: url('img/regalos-bg.jpg')
+    ============================================================ -->
+    <section class="regalos" id="regalos" aria-label="Lista de regalos">
+      <div class="regalos__bg" role="img" aria-label="Fondo decorativo regalos"></div>
+      <div class="regalos__overlay"></div>
+      <div class="regalos__inner container reveal">
+        <img src="assets/img/logo.png" alt="Maria Valeria & Juan David" class="regalos__logo" />
+        <p class="regalos__message">
+          El mejor regalo es compartir este día con ustedes. Si desean tener un detalle con nosotros, pueden hacerlo mediante lluvia de sobres o en la siguiente tienda.
+        </p>
+        <div class="regalos__cta-group">
+          <a href="#" class="btn btn--outline-cream">Lluvia de sobres</a>
+          <a href="#" class="btn btn--outline-cream">Tienda</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <img src="assets/img/logo.png" alt="Maria Valeria & Juan David" class="site-footer__logo" />
+      <p class="site-footer__names">Maria Valeria &amp; Juan David</p>
+      <p class="site-footer__date">21 · 11 · 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
