@@ -1073,7 +1073,7 @@ ul { list-style: none; }
   .nav { gap: 0; justify-content: center; }
 
   /* Hero — más a la izquierda */
-  .hero__bg { background-position: 75% center; }
+  .hero__bg { background-position: 70% center; }
 
   /* Boda timeline — mantiene 3 columnas, centrado */
   .boda__timeline {
