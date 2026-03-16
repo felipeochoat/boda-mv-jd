@@ -133,6 +133,14 @@
   if (btnPrev) btnPrev.addEventListener('click', () => go(idx - 1));
   if (btnNext) btnNext.addEventListener('click', () => go(idx + 1));
 
+  // Swipe táctil mobile
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) go(diff > 0 ? idx + 1 : idx - 1);
+  });
+
   let resizeT;
   window.addEventListener('resize', () => { clearTimeout(resizeT); resizeT = setTimeout(() => go(idx), 100); });
   go(0);

@@ -595,8 +595,11 @@ ul { list-style: none; }
 
 .hospedaje__wrap {
   position: relative;
-  overflow: hidden;
   margin-top: var(--sp-md);
+}
+
+.hospedaje__track-clip {
+  overflow: hidden;
 }
 
 .hospedaje__track {
@@ -652,11 +655,11 @@ ul { list-style: none; }
   font-size: .9rem;
   color: var(--clr-charcoal);
   transition: background .2s, color .2s;
-  z-index: 5;
+  z-index: 10;
 }
 .hospedaje__arrow:hover { background: var(--clr-wine); color: var(--clr-cream); border-color: var(--clr-wine); }
-.hospedaje__arrow--prev { left: 0; }
-.hospedaje__arrow--next { right: 0; }
+.hospedaje__arrow--prev { left: 4px; }
+.hospedaje__arrow--next { right: 4px; }
 
 /* ----------------------------------------------------------------
    BELLEZA — foto centrada única, maquilladoras arriba-der, peinadoras abajo-izq
@@ -1069,19 +1072,22 @@ ul { list-style: none; }
   .nav__burger { display: flex; }
   .nav { gap: 0; justify-content: center; }
 
-  /* Boda timeline → single column */
-  .boda__timeline { grid-template-columns: 24px 1fr; width: 100%; }
-  .boda__cell--left:not(:empty) { display: contents; }
-  .boda__cell--right:not(:empty) { display: contents; }
-  .boda__cell {
-    grid-column: 2;
-    min-height: 80px;
-    padding: var(--sp-sm) var(--sp-sm);
-    justify-content: flex-start;
+  /* Hero — más a la izquierda */
+  .hero__bg { background-position: -115% center; }
+
+  /* Boda timeline — mantiene 3 columnas, centrado */
+  .boda__timeline {
+    grid-template-columns: 1fr 1px 1fr;
+    width: 100%;
   }
-  .boda__cell:empty { display: none; }
-  .boda__line-col { grid-column: 1; }
-  .boda__info { text-align: left; }
+  .boda__cell {
+    min-height: 80px;
+    padding: var(--sp-sm) var(--sp-xs);
+  }
+  .boda__cell--left  { justify-content: flex-end; }
+  .boda__cell--right { justify-content: flex-start; }
+  .boda__info-label  { font-size: .48rem; }
+  .boda__info-value  { font-size: .88rem; }
 
   /* Vestimenta — carrusel se apila */
   .vestimenta__block { grid-template-columns: 1fr; }
@@ -1090,42 +1096,44 @@ ul { list-style: none; }
   .vestimenta__block--men .vestimenta__carousel { order: -1; }
   .vestimenta__body { padding: var(--sp-lg) var(--sp-md); }
 
-  /* Hospedaje */
-  .hospedaje__card { grid-template-columns: 1fr; }
-  .hospedaje__card-img { min-height: 220px; }
-  .hospedaje__arrow { display: none; }
+  /* Hospedaje — flechas visibles, tarjeta en columna única */
+  .hospedaje__card     { grid-template-columns: 1fr; flex: 0 0 100%; }
+  .hospedaje__card-img { min-height: 200px; }
 
-  /* Belleza — en mobile: foto arriba, maquilladoras, peinadoras abajo */
+  /* Belleza — columna única centrada */
   .belleza__layout {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-lg);
     padding: 0 var(--sp-md);
   }
   .belleza__center-photo {
-    grid-column: 1;
-    grid-row: 2;
-    width: 100%;
-    max-width: 320px;
-    margin-inline: auto;
+    width: min(260px, 72vw);
     aspect-ratio: 3/4;
+    order: 1;
   }
   .belleza__group--makeup {
-    grid-column: 1;
-    grid-row: 1;
-    text-align: left;
-    padding-bottom: var(--sp-sm);
+    order: 0;
+    text-align: center;
+    padding: 0;
+    width: 100%;
   }
   .belleza__group--hair {
-    grid-column: 1;
-    grid-row: 3;
-    text-align: left;
-    padding-top: var(--sp-sm);
+    order: 2;
+    text-align: center;
+    padding: 0;
+    width: 100%;
   }
+  .belleza__heading { font-size: 1rem; }
+  .belleza__handles { align-items: center; }
 
   /* Explora */
   .explora__overlay { padding-left: var(--sp-md); }
-  .explora__arrow { display: none; }
+  .explora__arrow   { display: none; }
 
-  /* Regalos */
+  /* Regalos — menos alto, padding generoso */
+  .regalos          { min-height: 70svh; }
+  .regalos__inner   { padding: var(--sp-xl) var(--sp-lg); }
   .regalos__cta-group { flex-direction: column; align-items: center; }
 }
