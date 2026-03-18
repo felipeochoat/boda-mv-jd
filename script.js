@@ -51,11 +51,13 @@
       // Activate adjacent timeline dot
       const timeline = entry.target.closest('.boda__timeline');
       if (timeline) {
-        const rows    = [...timeline.querySelectorAll('.boda__row')];
-        const row     = entry.target.closest('.boda__row');
+        const row = entry.target.closest('.boda__row');
         if (row) {
+          // Desktop: activa el line-col
           const lineCol = row.querySelector('.boda__line-col');
           if (lineCol) setTimeout(() => lineCol.classList.add('dot-active'), 280);
+          // Mobile: activa el ::before del row
+          setTimeout(() => row.classList.add('dot-active'), 280);
         }
       }
 

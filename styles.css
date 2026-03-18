@@ -503,8 +503,34 @@ ul { list-style: none; }
    MAPA
    ---------------------------------------------------------------- */
 .mapa { background: #111; }
-.mapa__inner { overflow: hidden; }
+
+.mapa__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.mapa__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.mapa__label {
+  font-family: var(--font-sans);
+  font-size: .58rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(229,221,209,.6);
+  text-align: center;
+  padding: .75rem var(--sp-sm);
+  background: #111;
+}
+
 .mapa__inner iframe { display: block; }
+
+@media (max-width: 639px) {
+  .mapa__inner { grid-template-columns: 1fr; }
+  .mapa__inner iframe { height: 260px; }
+}
 
 /* ----------------------------------------------------------------
    VESTIMENTA
@@ -1072,35 +1098,78 @@ ul { list-style: none; }
   .nav__burger { display: flex; }
   .nav { gap: 0; justify-content: center; }
 
-  /* Hero — más a la izquierda */
+  /* Hero — posición horizontal */
   .hero__bg { background-position: 70% center; }
 
-  /* Boda timeline — mantiene 3 columnas, centrado */
+  /* ---- BODA TIMELINE — columna única con línea a la izquierda ---- */
+  /* Cambiamos de grid 3 columnas a layout simple flex por item */
   .boda__timeline {
-    grid-template-columns: 1fr 1px 1fr;
+    display: block;
     width: 100%;
+    padding-left: var(--sp-md);
+    border-left: 1px solid rgba(229,221,209,.2);
+    margin-left: var(--sp-md);
   }
-  .boda__cell {
-    min-height: 80px;
-    padding: var(--sp-sm) var(--sp-xs);
-  }
-  .boda__cell--left  { justify-content: flex-end; }
-  .boda__cell--right { justify-content: flex-start; }
-  .boda__info-label  { font-size: .48rem; }
-  .boda__info-value  { font-size: .88rem; }
 
-  /* Vestimenta — carrusel se apila */
+  /* Cada fila: bloque apilado */
+  .boda__row {
+    display: block;
+    position: relative;
+    padding: var(--sp-sm) 0 var(--sp-sm) var(--sp-md);
+    margin-bottom: var(--sp-xs);
+  }
+
+  /* Dot sobre la línea izquierda */
+  .boda__row::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--clr-cream);
+    opacity: 0;
+    transition: opacity .5s var(--ease);
+  }
+  .boda__row.dot-active::before { opacity: 1; }
+
+  /* Ocultar las celdas vacías y la línea interna */
+  .boda__cell--left:empty,
+  .boda__cell--right:empty,
+  .boda__line-col              { display: none; }
+
+  /* Mostrar solo las celdas con contenido */
+  .boda__cell--left,
+  .boda__cell--right {
+    display: block;
+    min-height: unset;
+    padding: 0;
+    text-align: left;
+    justify-content: unset;
+  }
+
+  .boda__info       { text-align: left; }
+  .boda__info-label { font-size: .5rem; }
+  .boda__info-value { font-size: 1rem; }
+
+  /* ---- VESTIMENTA ---- */
   .vestimenta__block { grid-template-columns: 1fr; }
   .vestimenta__carousel { aspect-ratio: 4 / 5; min-height: unset; }
   .vest-slide { aspect-ratio: 4 / 5; min-height: unset; }
   .vestimenta__block--men .vestimenta__carousel { order: -1; }
   .vestimenta__body { padding: var(--sp-lg) var(--sp-md); }
 
-  /* Hospedaje — flechas visibles, tarjeta en columna única */
-  .hospedaje__card     { grid-template-columns: 1fr; flex: 0 0 100%; }
-  .hospedaje__card-img { min-height: 200px; }
+  /* ---- HOSPEDAJE — clip full width, tarjeta en columna única ---- */
+  .hospedaje__wrap       { padding: 0; }
+  .hospedaje__track-clip { width: 100%; overflow: hidden; }
+  .hospedaje__track      { width: 100%; }
+  .hospedaje__card       { flex: 0 0 100%; width: 100%; grid-template-columns: 1fr; }
+  .hospedaje__card-img   { min-height: 200px; width: 100%; }
+  .hospedaje__card-body  { padding: var(--sp-md); }
 
-  /* Belleza — columna única centrada */
+  /* ---- BELLEZA — columna única centrada ---- */
   .belleza__layout {
     display: flex;
     flex-direction: column;
@@ -1128,11 +1197,11 @@ ul { list-style: none; }
   .belleza__heading { font-size: 1rem; }
   .belleza__handles { align-items: center; }
 
-  /* Explora */
+  /* ---- EXPLORA ---- */
   .explora__overlay { padding-left: var(--sp-md); }
   .explora__arrow   { display: none; }
 
-  /* Regalos — menos alto, padding generoso */
+  /* ---- REGALOS ---- */
   .regalos          { min-height: 70svh; }
   .regalos__inner   { padding: var(--sp-xl) var(--sp-lg); }
   .regalos__cta-group { flex-direction: column; align-items: center; }
