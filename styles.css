@@ -554,7 +554,7 @@ ul { list-style: none; }
 }
 /* FOTO MUJERES: background-image: url('img/vestimenta-mujeres.jpg') */
 /* MUJERES — 3 slides */
-.vestimenta__photo--women  { background-image: url('assets/img/mujer1.jpg'); }
+.vestimenta__photo--women  { background-image: url('assets/img/mujer1.png'); }
 .vestimenta__photo--women2 { background-image: url('assets/img/mujer2.jpg'); }
 .vestimenta__photo--women3 { background-image: url('assets/img/mujer3.jpg'); }
 
@@ -611,6 +611,13 @@ ul { list-style: none; }
   color: var(--clr-wine);
 }
 
+/* Grupo de botones de alquiler (vestido / esmoquin) */
+.vestimenta__rentals {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+
 /* ----------------------------------------------------------------
    HOSPEDAJE
    ---------------------------------------------------------------- */
@@ -645,8 +652,12 @@ ul { list-style: none; }
   background-position: center;
 }
 /* FOTO: background-image: url('img/holiday-inn.jpg') */
-.hospedaje__card-img--1 { background-image: url('assets/img/holiday-inn.jpg') }
-.hospedaje__card-img--2 { background-image: url('assets/img/el-prado.jpg') }
+
+.hospedaje__card-img--1 { background-image: url('assets/img/el-prado.jpg') }
+.hospedaje__card-img--2 { background-image: url('assets/img/hotelEstelar.jpg') }
+.hospedaje__card-img--3 { background-image: url('assets/img/hotelFaranda.jpg') }
+.hospedaje__card-img--4 { background-image: url('assets/img/hotelBH.jpg') }
+
 
 .hospedaje__card-body {
   padding: var(--sp-lg) var(--sp-md);
@@ -686,6 +697,32 @@ ul { list-style: none; }
 .hospedaje__arrow:hover { background: var(--clr-wine); color: var(--clr-cream); border-color: var(--clr-wine); }
 .hospedaje__arrow--prev { left: 4px; }
 .hospedaje__arrow--next { right: 4px; }
+
+/* ----------------------------------------------------------------
+   SOBRE BARRANQUILLA — datos prácticos para los invitados
+   ---------------------------------------------------------------- */
+.info-baq {
+  background: var(--clr-cream-lt);
+  padding: var(--sp-xl) 0;
+}
+.info-baq__facts {
+  max-width: 360px;
+  margin: 0 auto var(--sp-md);
+  align-items: center;
+  text-align: center;
+}
+.info-baq__facts li { padding-left: 0; }
+.info-baq__facts li::before { display: none; }
+.info-baq__tour {
+  text-align: center;
+  max-width: 480px;
+  margin-inline: auto;
+}
+.info-baq__tour .info-baq__link {
+  color: var(--clr-wine);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 /* ----------------------------------------------------------------
    BELLEZA — foto centrada única, maquilladoras arriba-der, peinadoras abajo-izq
@@ -883,6 +920,37 @@ ul { list-style: none; }
 .explora__img--2 { background-image: url(assets/img/varadero.jpg); }
 .explora__img--3 { background-image: url(assets/img/ventana-al-mundo.jpg); }
 
+/* Gastronomía */
+.explora__img--4  { background-image: url(assets/img/narcobollo.jpg); }
+.explora__img--5  { background-image: url(assets/img/palenque.jpg); }
+.explora__img--6  { background-image: url(assets/img/manuel.jpg); }
+.explora__img--7  { background-image: url(assets/img/mCocina.jpg); }
+.explora__img--8  { background-image: url(assets/img/ebano.jpg); }
+.explora__img--9  { background-image: url(assets/img/helena.jpg); }
+.explora__img--10 { background-image: url(assets/img/laPiazetta.jpg); }
+.explora__img--11 { background-image: url(assets/img/miura.jpeg); }
+.explora__img--12 { background-image: url(assets/img/cuzco.jpg); }
+.explora__img--13 { background-image: url(assets/img/steakhouse.jpg); }
+.explora__img--14 { background-image: url(assets/img/salvaje.jpg); }
+
+/* Bares, discos y terrazas */
+.explora__img--15 { background-image: url(assets/img/henrys.jpg); }
+.explora__img--16 { background-image: url(assets/img/frogg.jpg); }
+.explora__img--17 { background-image: url(assets/img/laTroja.png); }
+.explora__img--18 { background-image: url(assets/img/epoca.png); }
+.explora__img--19 { background-image: url(assets/img/happyWine.jpg); }
+
+/* Compras */
+.explora__img--20 { background-image: url(assets/img/buenavista.jpg); }
+.explora__img--21 { background-image: url(assets/img/mallplaza.png); }
+.explora__img--22 { background-image: url(assets/img/viva.png); }
+
+/* Tures y visitas */
+.explora__img--23 { background-image: url(assets/img/catedral.jpg); }
+.explora__img--24 { background-image: url(assets/img/parqueCultural.jpg); }
+.explora__img--25 { background-image: url(assets/img/ecoparque.jpeg); }
+.explora__img--26 { background-image: url(assets/img/museoDelCarnaval.jpg); }
+
 .explora__card:hover .explora__img { transform: scale(1.03); }
 
 .explora__overlay {
@@ -953,8 +1021,10 @@ ul { list-style: none; }
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: .5rem;
+  max-width: 90%;
   z-index: 6;
   pointer-events: auto;
 }
